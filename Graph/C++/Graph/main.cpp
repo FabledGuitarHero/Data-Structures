@@ -25,6 +25,7 @@ int main(int argc, const char * argv[]) {
     myGraph -> print();
     std::cout << std::endl;
     
+    std::cout << "After manual remove:" << std::endl;
     myGraph -> removeVert(1);
     myGraph -> print();
 }
