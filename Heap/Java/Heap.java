@@ -20,9 +20,9 @@ public class Heap {
 
 	public void Swap(int i, int j)
 	{
-    	int temp = Heap[i];
-    	Heap[i] = Heap[j];
-    	Heap[j] = temp;
+        int temp = Heap[i];
+        Heap[i] = Heap[j];
+        Heap[j] = temp;
 	}
 
     /*
