@@ -3,7 +3,14 @@ public class Heap {
 	private int[] Heap = new int[1000];
 	private int size ;
 
-/********************  Helper methods ******************/
+    /*
+     *  Class helper methods:
+     *    -Parent: returns parent index of node
+     *    -Left: returns left child of node
+     *    -Right: returns right child of node
+     *    -hasleft: returns true if node has left child
+     *    -hasright: return true if node has right child
+     */
 
 	public int parent( int j)       {return (j-1)/2;}
 	public int left(int j)          {return (j*2)+1;}
@@ -18,9 +25,16 @@ public class Heap {
     	Heap[j] = temp;
 	}
 
-/********************  Major methods  ******************/
+    /*
+     *  Major class methods
+     */
 
 	public int getSize(){return size;}
+    
+    /*
+     *  Inserts new data at last index, then shifts the data to
+     *    maintain Heap integrity
+     */
 
 	public void Insert ( int x )
 	{
@@ -33,6 +47,9 @@ public class Heap {
 		}
 	}
 
+    /*
+     *  Prints heap
+     */
 	public void PrintHeap()
 	{
 		System.out.println("root: " + Heap[0]);
@@ -43,6 +60,10 @@ public class Heap {
 		System.out.println("\n");
 	}
     
+    /*
+     *  Shifts smallest data up to determine new min after insert.
+     *    -Takes last index (heap size) as a initial parameter).
+     */
     public void BubbleUp(int nodeIndex){
     	int parent;
     	if (nodeIndex != 0){
@@ -54,6 +75,11 @@ public class Heap {
     	}
 
     }
+    
+    /*
+     *  Shifts biggest data down the heap.
+     *    -Takes 0 index as initial variable.
+     */
     
     public void BubbleDown(int parentIndex){
     	int leftIndex = left(parentIndex);
