@@ -107,6 +107,10 @@ public class Heap {
     	}
     }
 
+    /*
+     *  Removes minimum value (root node).
+     *      Finds new root (BubbleDown) using index of 0.
+     */
     public int RemoveMin()
     {
     	int returnVal = Heap[0];
