@@ -32,6 +32,14 @@ public class LinkedListDriver {
 		tmp3.addFirst(230);
 		
 		System.out.println("Circularly Linked List: " + tmp3.toString());
+        
+        /*
+         * Print out:
+         * Singly Linked List:     5 10 15 25
+         * Doubly Linked List:     140 100 150 175
+         * Circularly Linked List: 230 215 220 255
+         */
+        
 	}
 
 }
