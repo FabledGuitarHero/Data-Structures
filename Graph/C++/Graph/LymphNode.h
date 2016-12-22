@@ -16,6 +16,11 @@ struct LymphNode {
     
     LymphNode();
     LymphNode(Type newData);
+    
+    Type getData();
+    Type getNext();
+    void setData(Type data);
+    void setNext(LymphNode next);
 };
 
 template <class Type>
