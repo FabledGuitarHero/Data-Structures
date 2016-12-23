@@ -23,6 +23,9 @@ struct LymphNode {
     void setNext(LymphNode *next);
 };
 
+/*
+ * Constructors
+ */
 template <class Type>
 LymphNode<Type>::LymphNode(){
     data;
@@ -35,10 +38,18 @@ LymphNode<Type>::LymphNode(Type newData){
     next = nullptr;
 }
 
+
+/*
+ * Accessor methods
+ */
 template <class Type>
 Type LymphNode<Type>::getData(){ return this->data; }
 template <class Type>
 Type* LymphNode<Type>::getNext(){ return this->next; }
+
+/*
+ * Setter methods
+ */
 template <class Type>
 void LymphNode<Type>::setData(Type data){ this->data = data; }
 template <class Type>
