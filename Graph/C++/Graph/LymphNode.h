@@ -18,9 +18,9 @@ struct LymphNode {
     LymphNode(Type newData);
     
     Type getData();
-    Type getNext();
+    Type* getNext();
     void setData(Type data);
-    void setNext(LymphNode next);
+    void setNext(LymphNode *next);
 };
 
 template <class Type>
@@ -35,6 +35,14 @@ LymphNode<Type>::LymphNode(Type newData){
     next = nullptr;
 }
 
+template <class Type>
+Type LymphNode<Type>::getData(){ return this->data; }
+template <class Type>
+Type* LymphNode<Type>::getNext(){ return this->next; }
+template <class Type>
+void LymphNode<Type>::setData(Type data){ this->data = data; }
+template <class Type>
+void LymphNode<Type>::setNext(LymphNode<Type> *next){ this->next = next; }
 
 
 #endif /* LymphNode_h */
