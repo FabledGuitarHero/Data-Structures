@@ -17,9 +17,10 @@ private:
 public:
     LymphNode();
     LymphNode(Type newData);
-    
+
     Type getData();
     LymphNode<Type>* getNext();
+
     void setData(Type data);
     void setNext(LymphNode *next);
 };
@@ -46,7 +47,11 @@ LymphNode<Type>::LymphNode(Type newData){
 template <class Type>
 Type LymphNode<Type>::getData(){ return this->data; }
 template <class Type>
+<<<<<<< HEAD
 LymphNode<Type>* LymphNode<Type>::getNext(){ return next; }
+=======
+Type* LymphNode<Type>::getNext(){ return this->next; }
+>>>>>>> master
 
 /*
  * Setter methods
