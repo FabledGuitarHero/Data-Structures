@@ -28,18 +28,23 @@ public:
     Type removeBeginning();
     bool contains(Type data);
     
-    //Helper classes
+    //Helper methods
     int size();
     
 private:
+    //Class variables
     LymphNode *head;
     LymphNode *end;
-    LymphNode* search(LymphNode *cancerNode, Type data);
     int count = 0;
-    void cleanup (LymphNode *cancerNode);
     
+    //Methods
+    LymphNode* search(LymphNode *cancerNode, Type data);
+    void cleanup (LymphNode *cancerNode);
 };
 
+/*
+ *  Constructor methods
+ */
 template <class LymphNode, class Type>
 LinkedList<LymphNode, Type>::LinkedList(){ head = nullptr; };
 
@@ -55,6 +60,10 @@ LinkedList<LymphNode, Type>::LinkedList(Type data){
     cleanup(cancerNode);
 };
 
+
+/*
+ *  Creates a new node and inserts the node at the end of the list
+ */
 template <class LymphNode, class Type>
 void LinkedList<LymphNode, Type>::insert(Type data){
     
@@ -65,17 +74,18 @@ void LinkedList<LymphNode, Type>::insert(Type data){
         end = cancerNode;
     }
     else{
-        end -> next = cancerNode;
+        end -> setNext(cancerNode);
         end = cancerNode;
     }
     
     count++;
-    
     cleanup(cancerNode);
     
 };
 
-
+/*
+ *  Creates a new node and inserts the node after a specific node in the list
+ */
 template <class LymphNode, class Type>
 void LinkedList<LymphNode, Type>::insertAfter(Type data, Type newData){
 
@@ -94,7 +104,9 @@ void LinkedList<LymphNode, Type>::insertAfter(Type data, Type newData){
     
 };
 
-
+/*
+ *  Creates and inserts a new node in the beginning of the list
+ */
 template <class LymphNode, class Type>
 void LinkedList<LymphNode, Type>::insertBeginning(Type data){
     LymphNode *cancerNode = new LymphNode(data);
@@ -107,20 +119,22 @@ void LinkedList<LymphNode, Type>::insertBeginning(Type data){
     
 };
 
-
+/*
+ *  Removes a specific element from the list
+ */
 template <class LymphNode, class Type>
 void LinkedList<LymphNode, Type>::remove(Type data){
     
     LymphNode *placeholder = search(head, data);
-    LymphNode *cancerNode = placeholder -> next;
+    LymphNode *cancerNode = placeholder -> getNext();
     
-    if (placeholder -> data == data)
-        head = placeholder->next;
-    else if (placeholder -> next -> next != nullptr)
-        placeholder -> next = placeholder -> next -> next;
+    if (placeholder -> getData() == data)
+        head = placeholder->getNext();
+    else if (placeholder -> getNext() -> getNext() != nullptr)
+        placeholder -> setNext(placeholder -> getNext() -> getNext());
     else{
         end = placeholder;
-        placeholder -> next = nullptr;
+        placeholder -> setNext(nullptr);
     }
 
     
@@ -131,52 +145,61 @@ void LinkedList<LymphNode, Type>::remove(Type data){
 };
 
 
+/*
+ *  Pops the first node in the list
+ */
 template <class LymphNode, class Type>
 Type LinkedList<LymphNode, Type>::removeBeginning(){
     LymphNode *cancerNode = head;
-    head = head->next;
+    head = head->getNext();
     count--;
     
-    Type temp = cancerNode->data;
+    Type temp = cancerNode->getData();
     cleanup(cancerNode);
     return temp;
 }
 
-template <class LymphNode, class Type>
-int LinkedList<LymphNode, Type>::size(){
-    return count;
-}
 
+/*
+ *  Returns the size of the list
+ */
+template <class LymphNode, class Type>
+int LinkedList<LymphNode, Type>::size(){ return count; }
+
+/*
+ *  Private method that recusively searches the list for specific data, or returns a nullptr.
+ */
 template <class LymphNode, class Type>
 LymphNode* LinkedList<LymphNode, Type>::search(LymphNode *cancerNode, Type searchData){
     
-    if (cancerNode -> data == searchData)
+    if (cancerNode -> getData() == searchData)
         return cancerNode;
-    else if (cancerNode -> next == NULL || cancerNode -> next -> data == searchData)
+    else if (cancerNode -> getNext() == NULL || cancerNode -> getNext() -> getData() == searchData)
         return cancerNode;
     else
-        cancerNode = search(cancerNode -> next, searchData);
+        cancerNode = search(cancerNode -> getNext(), searchData);
     
     return cancerNode;
 }
 
+/*
+ * Calls the search method and checks if the list contains the requested search data
+ */
 template <class LymphNode, class Type>
 bool LinkedList<LymphNode, Type>::contains(Type data){
 
     LymphNode *cancerNode = search(head, data);
     
-    if (cancerNode -> data == data){
+    if (cancerNode -> getData() == data){
         cleanup(cancerNode);
         return true;
     }
-    else if (cancerNode->next && cancerNode->next->data == data)
-    {
+    else if (cancerNode->getNext() && cancerNode->getNext()->getData() == data){
         
         cleanup(cancerNode);
         return true;
     }
-    else
-    {
+    else{
         cleanup(cancerNode);
         return false;
     }
@@ -184,6 +207,9 @@ bool LinkedList<LymphNode, Type>::contains(Type data){
     
 }
 
+/*
+ *  Appends the list to a string and returns it to be printed
+ */
 template <class LymphNode, class Type>
 std::string LinkedList<LymphNode, Type>::printList(){
     
@@ -192,8 +218,8 @@ std::string LinkedList<LymphNode, Type>::printList(){
     
     while (cancerNode != NULL)
     {
-        returnString.append(std::to_string(cancerNode->data) + " ");
-        cancerNode = cancerNode ->next;
+        returnString.append(std::to_string(cancerNode->getData()) + " ");
+        cancerNode = cancerNode -> getNext();
     }
     
     cleanup(cancerNode);
@@ -201,6 +227,10 @@ std::string LinkedList<LymphNode, Type>::printList(){
     return returnString;
 }
 
+
+/*
+ *  Method to cleanup unneeded pointers
+ */
 template <class LymphNode, class Type>
 void LinkedList<LymphNode, Type>::cleanup(LymphNode *cancerNode){
     cancerNode = nullptr;
