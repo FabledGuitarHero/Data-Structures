@@ -17,9 +17,9 @@ int main(int argc, const char * argv[]) {
     std::cout << std::endl;
     
     
-    myGraph -> addEdge(1, 5);
-    myGraph -> addEdge(1, 6);
-    myGraph -> addEdge(2, 6);
+    myGraph -> addAdj(1, 5);
+    myGraph -> addAdj(1, 6);
+    myGraph -> addAdj(2, 6);
     
     std::cout << "After manual add: " << std::endl;
     myGraph -> print();
