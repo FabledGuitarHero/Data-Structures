@@ -8,7 +8,7 @@
 
 #include <iostream>
 #include "SinglyLinkedList.h"
-//#include "SLLNode.h"
+#include "DoublyLinkedList.h"
 
 int main(int argc, const char * argv[]) {
     SinglyLinkedList<int> *tmp = new SinglyLinkedList<int>();
@@ -23,4 +23,17 @@ int main(int argc, const char * argv[]) {
     std::cout << tmp -> print() << std::endl;
     tmp -> remove(5);
     std::cout << tmp -> print() << std::endl;
+    
+    std::cout << "Doubly Linked List: " << std::endl;
+    DoublyLinkedList<int> *tmp2 = new DoublyLinkedList<int>();
+    tmp2 -> addFront(10);
+    tmp2 -> addEnd(15);
+    tmp2 -> addFront(5);
+    std::cout << tmp2 -> print() << std::endl;
+    
+    tmp2 ->removeFront();
+    std::cout << tmp2 -> print() << std::endl;
+    tmp2 ->addFront(30);
+    tmp2->remove(10);
+    std::cout << tmp2 -> print() << std::endl;
 }
