@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		D9C6061E1E10823300A0D3D6 /* DLLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLLNode.h; sourceTree = "<group>"; };
 		D9C606201E10830A00A0D3D6 /* DoublyLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DoublyLinkedList.h; sourceTree = "<group>"; };
+		D9C606231E108B4400A0D3D6 /* CircularlyLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CircularlyLinkedList.h; path = ../CircularlyLinkedList.h; sourceTree = "<group>"; };
 		D9E2E9F81E0E1AEC0056680F /* LinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9E2E9FB1E0E1AEC0056680F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D9E2EA021E0E1B610056680F /* SLLNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLLNode.h; sourceTree = "<group>"; };
@@ -60,6 +61,14 @@
 			name = DoublyLinkedList;
 			sourceTree = "<group>";
 		};
+		D9C606241E109FDD00A0D3D6 /* CircularlyLinkedList */ = {
+			isa = PBXGroup;
+			children = (
+				D9C606231E108B4400A0D3D6 /* CircularlyLinkedList.h */,
+			);
+			name = CircularlyLinkedList;
+			sourceTree = "<group>";
+		};
 		D9E2E9EF1E0E1AEC0056680F = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +88,10 @@
 		D9E2E9FA1E0E1AEC0056680F /* LinkedList */ = {
 			isa = PBXGroup;
 			children = (
-				D9C606221E108AF100A0D3D6 /* DoublyLinkedList */,
-				D9E2E9FB1E0E1AEC0056680F /* main.cpp */,
 				D9C6061F1E10823A00A0D3D6 /* SinglyLinkedList */,
+				D9C606221E108AF100A0D3D6 /* DoublyLinkedList */,
+				D9C606241E109FDD00A0D3D6 /* CircularlyLinkedList */,
+				D9E2E9FB1E0E1AEC0056680F /* main.cpp */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";

@@ -9,8 +9,10 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
 #include "DoublyLinkedList.h"
+#include "CircularlyLinkedList.h"
 
 int main(int argc, const char * argv[]) {
+    std::cout << "Singly Linked List: " << std::endl;
     SinglyLinkedList<int> *tmp = new SinglyLinkedList<int>();
     
     tmp -> addFront(10);
@@ -36,4 +38,13 @@ int main(int argc, const char * argv[]) {
     tmp2 ->addFront(30);
     tmp2->remove(10);
     std::cout << tmp2 -> print() << std::endl;
+    
+    std::cout << "Circularly Linked List: " << std::endl;
+    CircularlyLinkedList<int> *tmp3 = new CircularlyLinkedList<int>();
+    tmp3 -> addFront(100);
+    tmp3 -> addFront(110);
+     std::cout << tmp3 -> print() << std::endl;
+    tmp3 -> addEnd(120);
+    tmp3 -> remove(110);
+    std::cout << tmp3 -> print() << std::endl;
 }
