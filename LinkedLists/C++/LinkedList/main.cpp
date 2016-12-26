@@ -22,7 +22,6 @@ int main(int argc, const char * argv[]) {
     std::cout << tmp -> print() << std::endl;
     
     tmp -> removeFront();
-    std::cout << tmp -> print() << std::endl;
     tmp -> remove(5);
     std::cout << tmp -> print() << std::endl;
     
@@ -34,7 +33,6 @@ int main(int argc, const char * argv[]) {
     std::cout << tmp2 -> print() << std::endl;
     
     tmp2 ->removeFront();
-    std::cout << tmp2 -> print() << std::endl;
     tmp2 ->addFront(30);
     tmp2->remove(10);
     std::cout << tmp2 -> print() << std::endl;
@@ -43,7 +41,6 @@ int main(int argc, const char * argv[]) {
     CircularlyLinkedList<int> *tmp3 = new CircularlyLinkedList<int>();
     tmp3 -> addFront(100);
     tmp3 -> addFront(110);
-     std::cout << tmp3 -> print() << std::endl;
     tmp3 -> addEnd(120);
     tmp3 -> remove(110);
     std::cout << tmp3 -> print() << std::endl;
