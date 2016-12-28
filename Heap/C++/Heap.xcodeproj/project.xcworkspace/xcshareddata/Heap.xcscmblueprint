@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1F16D6B73A199C0C8FA71BB45E4299E4F7D58AE8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EC30F496888DD24C1A943715666CF7A7722F23D6" : 9223372036854775807,
+    "1F16D6B73A199C0C8FA71BB45E4299E4F7D58AE8" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E1B5861B-70C9-446E-BE08-02457350B19A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EC30F496888DD24C1A943715666CF7A7722F23D6" : "",
+    "1F16D6B73A199C0C8FA71BB45E4299E4F7D58AE8" : "DataStructures\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Heap",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Heap\/C++\/Heap.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:FabledGuitarHero\/Data-Structures.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1F16D6B73A199C0C8FA71BB45E4299E4F7D58AE8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/FabledGuitarHero\/Portfolio.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EC30F496888DD24C1A943715666CF7A7722F23D6"
+    }
+  ]
+}
